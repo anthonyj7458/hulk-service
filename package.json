@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha --timeout 200000"
   },
+  "dependencies": {
+    "config": "^1.26.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "*",
