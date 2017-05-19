@@ -1,0 +1,23 @@
+{
+  "name": "hulk-service",
+  "version": "1.0.0",
+  "description": "An API based service to demonstrate the use of hulk-mailer",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 200000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonyj7458/hulk-service.git"
+  },
+  "keywords": [
+    "mailer",
+    "service"
+  ],
+  "author": "Joseph Anthony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthonyj7458/hulk-service/issues"
+  },
+  "homepage": "https://github.com/anthonyj7458/hulk-service#readme"
+}
