@@ -8,12 +8,16 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
+    "chai": "^3.5.0",
     "config": "^1.26.1",
     "express": "^4.15.3",
-    "hulk-mailer": "^1.0.0",
+    "hulk-mailer": "^1.0.1",
     "lodash": "^4.17.4",
     "method-override": "^2.3.8",
+    "mocha": "^3.4.1",
     "morgan": "^1.8.1",
+    "node-mocks-http": "^1.6.2",
+    "replay": "^2.1.2",
     "winston": "^2.3.1"
   },
   "devDependencies": {
