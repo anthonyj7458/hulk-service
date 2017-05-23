@@ -4,21 +4,9 @@
   "description": "An API based service to demonstrate the use of hulk-mailer",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --timeout 200000"
-  },
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "chai": "^3.5.0",
-    "config": "^1.26.1",
-    "express": "^4.15.3",
-    "hulk-mailer": "^1.0.3",
-    "lodash": "^4.17.4",
-    "method-override": "^2.3.8",
-    "mocha": "^3.4.1",
-    "morgan": "^1.8.1",
-    "node-mocks-http": "^1.6.2",
-    "replay": "^2.1.2",
-    "winston": "^2.3.1"
+    "test": "mocha --timeout 200000",
+    "start": "nodemon server.js",
+    "preinstall": "npm install -g nodemon grunt-cli"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -27,11 +15,25 @@
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015-node5": "*",
     "babel-preset-stage-3": "*",
+    "chai": "^3.5.0",
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-strip-code": "^1.0.4"
+    "grunt-strip-code": "^1.0.4",
+    "mocha": "^3.4.1",
+    "morgan": "^1.8.1",
+    "node-mocks-http": "^1.6.2",
+    "replay": "^2.1.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "config": "^1.26.1",
+    "express": "^4.15.3",
+    "hulk-mailer": "^1.0.5",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.8",
+    "winston": "^2.3.1"
   },
   "repository": {
     "type": "git",
