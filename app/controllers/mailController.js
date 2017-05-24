@@ -7,7 +7,16 @@ export default class MailController {
     HulkMailer.send(email, (error, success) => {
       if(error)
         return Responder.operationFailed(res, error);
-      return Responder.success(res, success);
+      return Responder.success(res, { success });
+    });
+  }
+
+  static sendByProvider(req, res) {
+    const email = new HulkMailer.Email(req.body);
+    HulkMailer.sendByProvider(req.params.providerName, email, (error, success) => {
+      if(error)
+        return Responder.operationFailed(res, error);
+      return Responder.success(res, { success });
     });
   }
 };

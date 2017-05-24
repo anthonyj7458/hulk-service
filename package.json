@@ -5,8 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha --timeout 200000",
-    "start": "nodemon server.js",
-    "preinstall": "npm install -g nodemon grunt-cli"
+    "start": "forever start server.js",
+    "stop": "forever stop server.js",
+    "restart": "forever restart server.js",
+    "preinstall": "npm install -g forever grunt-cli"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -30,7 +32,7 @@
     "body-parser": "^1.17.2",
     "config": "^1.26.1",
     "express": "^4.15.3",
-    "hulk-mailer": "^1.0.5",
+    "hulk-mailer": "^1.0.6",
     "lodash": "^4.17.4",
     "method-override": "^2.3.8",
     "winston": "^2.3.1"
