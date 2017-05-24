@@ -5,9 +5,10 @@
 $ git clone https://github.com/anthonyj7458/hulk-service
 ```
 
-## Installation
+## Test
 ```shell
-$ npm install --only=development
+$ npm install
+$ npm test
 ```
 
 ## Create Build
@@ -18,12 +19,7 @@ $ cd build
 
 ## Install Dependencies
 ```shell
-$ npm install
-```
-
-## Test
-```shell
-$ npm test
+$ npm install --only=production
 ```
 
 ## Start Server
