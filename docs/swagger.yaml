@@ -1,0 +1,147 @@
+swagger: '2.0'
+info:
+  title: Hulk Service API
+  description: Hulk Service API
+  version: "1.0.0"
+# the domain of the service
+host: localhost:3000
+# array of all schemes that your API supports
+schemes:
+  - http
+# will be prefixed to all paths
+basePath: /mail
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  /send:
+    post:
+      tags:
+        - mail
+      summary: Send Mail
+      description: Send a mail
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/emailbody'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/emailsent'
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/400'
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/401'
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/500'
+
+  /{provider_name}/send:
+    post:
+      tags:
+        - mail
+      summary: Send Mail
+      description: Send a mail
+      parameters:
+        - name: provider_name
+          description: name of the configuration
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/emailbody'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/emailsent'
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/400'
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/401'
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/500'
+
+definitions:
+
+  emailbody:
+    type: object
+    properties:
+      from:
+        type: string
+        description: sender's email
+      to:
+        type: array
+        items:
+          type: string
+        description: reciever's email
+      cc:
+        type: array
+        items:
+          type: string
+        description: reciever's email
+      bcc:
+        type: array
+        items:
+          type: string
+        description: reciever's email
+      subject:
+        type: string
+        description: subject of the email
+      html:
+        type: string
+        description: body of the email
+      text:
+        type: string
+        description: body of the email
+    required: [from, to, subject]
+
+  emailsent:
+    type: object
+    properties:
+      success:
+        type: boolean
+        description: sent status
+    required: [success]
+    
+  400:
+    type: object
+    properties:
+      reason:
+        type: string
+        description: reason of failure
+    required: [reason]
+  
+  401:
+    type: object
+    properties:
+      reason:
+        type: string
+        description: reason of failure
+    required: [reason]
+  
+  500:
+    type: object
+    properties:
+      reason:
+        type: string
+        description: reason of failure
+    required: [reason]
